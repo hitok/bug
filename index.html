@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="hitok" />
+  
+	<title>Untitled 1</title>
+  <style type="text/css">
+    .first {  
+      top:50%; 
+      left:50%; 
+      margin:-207px 0 0 -600px; 
+      position:absolute;
+      width:1200px; 
+      height:415px;
+    }
+    .homeblock {
+      top:50%; 
+      left:50%; 
+      margin:-207px 0 0 -600px; 
+      position:absolute;
+      width:1200px; 
+      height:415px;
+       
+      z-index:1;
+      -webkit-transition:all 1s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+      -moz-transition:all 1s cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+      -ms-transition:all 1s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+      -o-transition:all 1s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+      transition:all 1s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    }
+    
+    .homeblock.active_slide { z-index:2;}
+   
+    .butterfly, 
+    .city
+    {
+      position:absolute; right:0px; 
+    }
+    
+    .slide
+    {        
+      -webkit-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000);      
+      -moz-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+      -ms-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+      -o-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+      transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+    }
+    .city {  
+      -webkit-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.5s;
+      -moz-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.5s;
+      -ms-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.5s;
+      -o-transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.5s;
+      transition:all 0.7s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.5s; 
+    }
+    
+    .slide {
+      top:-10px; 
+      right:50px; 
+      
+      width:668px; 
+      height:681px;    
+      -webkit-transform:scale(0.6); 
+      -moz-transform:scale(0.6); 
+      -ms-transform:scale(0.6); 
+      -o-transform:scale(0.6); 
+      transform:scale(0.6); 
+    }
+    
+    .butterfly {width:114px; height:112px; background:url(slide1But2V2.png); top:60px; right:200px;}
+    .city {width:460px; height:302px; background:url(slide1City.gif) no-repeat 0px 0px; top:0px; right:100px; overflow:hidden;}
+  
+    .butterfly 
+    {     
+      -webkit-transition:all 1.5s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.7s;
+      -moz-transition:all 1.5s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.7s;
+      -ms-transition:all 1.5s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.7s;
+      -o-transition:all 1.5s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.7s;
+      transition:all 1.5s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.7s;
+    }
+    .active_slide .slide {
+      top:-10px; 
+      right:50px; 
+      -webkit-transform:scale(1); 
+      -moz-transform:scale(1); 
+      -ms-transform:scale(1); 
+      -o-transform:scale(1); 
+      transform:scale(1);
+    }  
+    .active_slide .butterfly {right:200px;top:200px;}
+
+    .button {
+      display: block;
+      width: 60px;
+      padding: 8px 16px;
+      background-color: #fff;
+      margin: 4px;
+      text-align: center;
+    }
+
+  </style>
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+      
+      var flag = true;
+      var homeblock = jQuery('.homeblock');
+      jQuery('#button_1').click(function () { 
+        if (flag) {
+          homeblock.addClass('active_slide');
+          flag = false;
+        } else {
+          homeblock.removeClass('active_slide');
+          flag = true;
+        }
+      })
+    });
+  </script>
+</head>
+
+<body style="background-color: #222222;">
+  <a id="button_1" class="button" href="#">Move</a>
+  <div class="homeblock">
+    <div class="slide">
+      <div class="butterfly"></div>
+      <div class="city"></div>
+    </div>
+  </div>
+
+</body>
+</html>
